@@ -1,5 +1,3 @@
--- +migrate up
-
 CREATE TYPE priority AS ENUM ('low', 'medium', 'high');
 
 CREATE TABLE tasks (
@@ -9,8 +7,3 @@ CREATE TABLE tasks (
     priority priority,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-
--- +migrate down
-
-DROP TABLE IF EXISTS tasks;
-DROP TYPE IF EXISTS priority;
